@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np 
 
 #Load data, observation. rides
 data_path = 'Bike-Sharing-Dataset/hour.csv'
@@ -31,13 +30,6 @@ test_features, test_targets = test_data.drop(target_fields, axis = 1), test_data
 train_features, train_targets = features[: -60*24], targets[: -60*24]
 val_features, val_targets = features[-60*24:], targets[-60*24:]
 
-#NN building
-Class NeuralNetwork(object):
-	def__init__(self, input_nodes_n, hidden_nodes_n, output_nodes_n, learning_rate):
-		self.input_nodes_n = input_nodes_n
-		self.hidden_nodes_n = hidden_nodes_n
-		self.output_nodes_n = output_nodes_n
-		self.weights_input = np.random.normal(0.0, self.input_nodes_n**-0.5, (self.input_nodes_n, self.hidden_nodes_n))
-		self.weights_hidden = np.random.normal(0.0, self.hidden_nodes_n**-0.5, (self.hidden_nodes_n, self.output_nodes_n))
-		self.lr = learnin_rate
-		self.activation_function = lambda x : 1 / (1 + np.exp(-x))
+from deep-learning-NN import NeuralNetwork
+
+
